@@ -18,6 +18,16 @@
             border: 10px solid #f2f2f2;
         }
     </style>
+
+    <script>
+        class YearElement extends HTMLElement {
+    connectedCallback() {
+        this.innerHTML = new Date().getFullYear();
+    }
+}
+
+customElements.define("x-fullyear", YearElement);
+    </script>
 </head>
 
 <body>
@@ -47,7 +57,7 @@
         </section>
     </main>
     <footer>
-        &copy; me 2020
+        &copy; me <x-fullyear></x-fullyear>
     </footer>
 </body>
 
